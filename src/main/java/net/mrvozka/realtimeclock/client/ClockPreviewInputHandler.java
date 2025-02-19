@@ -12,17 +12,17 @@ public class ClockPreviewInputHandler {
 
     @SubscribeEvent
     public static void onKeyInput(InputEvent.Key event) {
-        // Si se pulsa la tecla P y no hay otra pantalla abierta, se abre la pantalla de preview
+        // If the P key is pressed and no other screen is open, the preview screen opens.
         if (ClockPreviewKeyMappings.togglePreviewKey.consumeClick() && Minecraft.getInstance().screen == null) {
             Minecraft.getInstance().setScreen(new ClockPreviewScreen());
             return;
         }
 
-        // Aquí, la lógica para el modo preview se gestionará desde la pantalla de preview.
-        // Si decides seguir utilizando el handler sin pantalla, podrías comprobar:
+        // Here, the logic for the preview mode will be handled from the preview screen.
+        // If you decide to continue using the handler without a screen, you could check:
         /*
         if (ClockPreviewKeyMappings.togglePreviewKey.consumeClick()) {
-            // Alterna el modo preview, etc.
+            // Toggles preview mode, etc.
         }
         if (ClockPreviewHandler.previewMode) {
             int moveAmount = 5;

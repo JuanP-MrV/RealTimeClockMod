@@ -12,15 +12,15 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
-        // Asegúrate de que el código se ejecute en el servidor
+        // Make sure that the code is executed on the server side (client server)
         if (!event.getLevel().isClientSide()) {
             if (event.getEntity() instanceof ServerPlayer player) {
                 try {
-                    // Envía el mensaje al jugador; el false evita que se añada al historial de chat
-                    player.displayClientMessage(Component.literal("Real time clock mod: Se ha cargado correctamente"), false);
+                    // Sends the message to the player; false prevents it from being added to the chat history
+                    player.displayClientMessage(Component.literal("Real time clock mod: successfully loaded"), false);
                 } catch (Exception e) {
-                    // Se captura el error y se loguea para evitar que se propague
-                    RealTimeClockMod.LOGGER.error("Error enviando mensaje al jugador", e);
+                    // The error is caught and logged to prevent it from spreading.
+                    RealTimeClockMod.LOGGER.error("Error sending message to player", e);
                 }
             }
         }
