@@ -1,0 +1,17 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:birch_forest": "2025-02-18 10:14:23 +0100",
+      "minecraft:beach": "2025-02-18 10:25:13 +0100",
+      "minecraft:dark_forest": "2025-02-18 10:14:10 +0100",
+      "minecraft:river": "2025-02-18 10:14:20 +0100",
+      "minecraft:swamp": "2025-02-18 10:25:30 +0100",
+      "minecraft:forest": "2025-02-18 10:14:19 +0100",
+      "minecraft:ocean": "2025-02-18 10:26:06 +0100",
+      "minecraft:old_growth_birch_forest": "2025-02-18 10:11:28 +0100",
+      "minecraft:plains": "2025-02-18 10:26:02 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

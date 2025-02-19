@@ -1,0 +1,9 @@
+
+[general]
+	#Posición X absoluta para el reloj (en píxeles)
+	#Range: 0 ~ 10000
+	clockX = 20
+	#Posición Y absoluta para el reloj (en píxeles)
+	#Range: 0 ~ 10000
+	clockY = -5
+
