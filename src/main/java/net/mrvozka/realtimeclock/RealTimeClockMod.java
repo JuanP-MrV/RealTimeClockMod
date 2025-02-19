@@ -24,13 +24,13 @@ public class RealTimeClockMod {
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the client's configuration
+        // Registra la configuración del cliente
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.CLIENT_SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            // Registration of POIs or other elements, if required
+            // Registro de POIs u otros elementos, si fueran necesarios
         });
     }
 
@@ -38,7 +38,7 @@ public class RealTimeClockMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            // Customer-specific configurations, if needed
+            // Configuraciones específicas del cliente, si se necesitan
         }
     }
 }

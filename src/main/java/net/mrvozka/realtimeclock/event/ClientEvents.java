@@ -15,8 +15,8 @@ public class ClientEvents {
 
         @SubscribeEvent
         public static void registerGuiOverlays(@NotNull RegisterGuiOverlaysEvent event) {
-            // Register the time overlay above the chat.
-            // The first parameter is the ID of our overlay (“time”), the second is the ID of the reference overlay (“chat”).
+            // Registra el overlay de la hora por encima del chat.
+            // El primer parámetro es el ID de nuestro overlay ("time"), el segundo es el ID del overlay de referencia ("chat").
             event.registerAboveAll("time", RealTimeOverlay.HUD_TIME);
         }
     }
