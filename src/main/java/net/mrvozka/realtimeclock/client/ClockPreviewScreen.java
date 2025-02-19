@@ -16,7 +16,7 @@ public class ClockPreviewScreen extends Screen {
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
 
     public ClockPreviewScreen() {
-        super(Component.literal("Modo Preview del Reloj"));
+        super(Component.literal("Preview mode for Real Time Clock"));
         // Inicializa la posición con los valores actuales de la configuración
         this.previewX = ClientConfig.CLIENT.clockX.get();
         this.previewY = ClientConfig.CLIENT.clockY.get();
@@ -24,13 +24,13 @@ public class ClockPreviewScreen extends Screen {
 
     @Override
     protected void init() {
-        // Puedes agregar botones o elementos si lo deseas
+        // You can add buttons or elements if you wish
     }
 
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         int moveAmount = 5;
-        // Movimiento con flechas o WASD:
+        // Movement with arrows or WASD:
         if (keyCode == GLFW.GLFW_KEY_UP || keyCode == GLFW.GLFW_KEY_W) {
             previewY -= moveAmount;
             return true;
@@ -47,18 +47,18 @@ public class ClockPreviewScreen extends Screen {
             previewX += moveAmount;
             return true;
         }
-        // Pulsar P o Entern confirma la posición
+        // Pressing P or Entern confirms the position.
         if (keyCode == GLFW.GLFW_KEY_P || keyCode == GLFW.GLFW_KEY_ENTER) {
             ClientConfig.CLIENT.clockX.set(previewX);
             ClientConfig.CLIENT.clockY.set(previewY);
             if (Minecraft.getInstance().player != null) {
                 Minecraft.getInstance().player.displayClientMessage(
-                        Component.literal("Posición confirmada."), false);
+                        Component.literal("Position confirmed."), false);
             }
             Minecraft.getInstance().setScreen(null);
             return true;
         }
-        // Esc cancela la operación sin guardar cambios
+        // Esc cancels the operation without saving changes
         if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
             Minecraft.getInstance().setScreen(null);
             return true;
@@ -68,11 +68,11 @@ public class ClockPreviewScreen extends Screen {
 
     @Override
     public void render(PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
-        // Renderiza un fondo semi-transparente para bloquear el resto de entradas
+        // Renders a semi-transparent background to block all other inputs
         this.renderBackground(poseStack);
-        // Muestra las instrucciones centradas en la parte superior
-        drawCenteredString(poseStack, this.font, "Modo Preview: Usa flechas o AWSD para mover, P o Enter para confirmar, Esc para cancelar", this.width / 2, 20, 0xFFFFFF);
-        // Renderiza el reloj en modo preview (en rojo)
+        // Displays instructions centered at the top of the screen
+        drawCenteredString(poseStack, this.font, "Preview mode: Use arrows or AWSD to move, P or Enter to confirm, Esc to cancel.", this.width / 2, 20, 0xFFFFFF);
+        // Renders the clock in preview mode (in red)
         String timeString = LocalTime.now().format(TIME_FORMATTER);
         this.font.drawShadow(poseStack, timeString, previewX, previewY, 0xFF0000);
         super.render(poseStack, mouseX, mouseY, partialTick);

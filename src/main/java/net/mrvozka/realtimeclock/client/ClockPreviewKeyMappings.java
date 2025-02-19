@@ -12,7 +12,7 @@ public class ClockPreviewKeyMappings {
 
     @SubscribeEvent
     public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
-        // Asigna la tecla "P" para abrir la pantalla de preview en la categoría personalizada
+        // Assign the “P” key to open the preview screen in the custom category.
         togglePreviewKey = new KeyMapping("key.realtimeclockmod.toggle_preview", GLFW.GLFW_KEY_P, "key.categories.realtimeclock");
         event.register(togglePreviewKey);
     }
