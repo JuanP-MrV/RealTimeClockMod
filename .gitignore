@@ -1,21 +1,73 @@
-.gradle
+# Gradle
+.gradle/
 **/build/
 !src/**/build/
-
-# Ignore Gradle GUI config
+gradle/
 gradle-app.setting
-
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
-
-# Cache of project
 .gradletasknamecache
 
-# Eclipse Gradle plugin generated files
-# Eclipse Core
+# IntelliJ IDEA
+.idea/
+
+# Minecraft Forge Modding
+run/
+run/config/
+run/crash-reports/
+run/logs/
+run/saves/
+
+# Generated files and logs
+config/
+crash-reports/
+defaultconfigs/
+logs/
+mods/
+resourcepacks/
+saves/
+
+# Project-specific files
+*.jar
+*.log
+*.tmp
+*.lock
+*.class
+*.iml
+*.ipr
+*.iws
+*.swp
+*.swo
+*.swn
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Eclipse-specific files
 .project
-# JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# Gradle Wrapper
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Forge build artifacts
+classes/
+createMcpToSrg/
+downloadMCMeta/
+downloadMcpConfig/
+extractSrg/
+generated/
+jarjar/
+libs/
+reobfJar/
+resources/
+tmp/
+
+# User data
+options.txt
+usercache.json
+usernamecache.json
+run-data/
+
+# Git
+.gitignore
