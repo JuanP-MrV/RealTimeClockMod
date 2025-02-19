@@ -8,10 +8,10 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class RealTimeOverlay {
-    // Define el formateador como constante
+    // Defines the formatter as constant
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
 
-    // Define el overlay que se encargará de dibujar la hora en pantalla
+    // Defines the overlay that will draw the time on the screen.
     public static final IGuiOverlay HUD_TIME = (gui, poseStack, partialTick, width, height) -> {
         String timeString = LocalTime.now().format(TIME_FORMATTER);
 
@@ -24,7 +24,7 @@ public class RealTimeOverlay {
             y = ClientConfig.CLIENT.clockY.get();
         }
 
-        // Usa color rojo (0xFF0000) en modo preview y blanco (0xFFFFFF) de forma normal
+        // Uses red color (0xFF0000) in preview mode and white (0xFFFFFFFF) in normal mode
         int color = ClockPreviewHandler.previewMode ? 0xFF0000 : 0xFFFFFF;
 
         try {
