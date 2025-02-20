@@ -7,11 +7,13 @@ Developed by **JuanP - MrV** | [GitHub Repository](https://github.com/JuanP-MrV/
 
 ### 🕰️ Features
 - 📟 **Displays the real-time clock** above the chat in Minecraft.
-- 🎨 **Customizable position** via an intuitive preview mode.
-- 🖥️ **Preview mode:** Adjust the clock’s location using an on-screen UI.
+- 🎨 **Highly customizable display:** 
+  - Configurable **time format** (HH:mm, HH:mm:ss, etc.).
+  - Option to **show the current day** (number, abbreviated name, or both).
+  - **Adjustable text color** and **optional semi-transparent background**.
+- 🖥️ **Preview mode:** Adjust the clock’s location using an in-game UI.
 - 🎮 **Simple controls:** Press `P` to enter preview mode, then use `AWSD` or arrow keys to move the clock.
-- 🏆 **Non-intrusive design** that blends well with the game’s UI.
-- ✅ **Optimized for stability** and compatibility with other mods.
+- ✅ **Optimized for stability** and **fully standalone** (no dependencies on other mods).
 
 ---
 
@@ -39,7 +41,40 @@ The clock will remain in the set position until manually changed.
 ---
 
 ## ⚙️ Configuration
-The mod automatically generates a configuration file in the `config/` folder, allowing you to manually adjust settings if needed.
+The mod automatically generates a configuration file in the `config/` folder.  
+All settings can also be adjusted **directly in-game** via the preview menu.
+
+### Customization Options:
+- **Time format:** Choose between 12-hour or 24-hour formats.
+- **Date format:** Display the current day (`Mon. 25` or `25 Mon.`).
+- **Clock position:** Adjust the X and Y coordinates.
+- **Text color:** Modify the clock color for better readability.
+- **Background:** Enable or disable a semi-transparent background.
+
+---
+
+## 🚀 Roadmap & Upcoming Features
+We have exciting features planned for future versions:
+
+### 🕒 **Stopwatches**
+- Up to **3 active stopwatches** at the same time.
+- Manual start, pause, and reset controls.
+- Can be toggled using a dedicated in-game interface or keybindings.
+- **First milestone:** Fully manual stopwatches (automated ones may come later).
+
+### 🔔 **Alarms**
+- Set alarms to trigger at **specific real-world times** (e.g., `14:30`).
+- Can have **up to 3 active alarms** at a time.
+- Notifications appear **in chat** and **play a sound**.
+- Alarms will **not persist** after leaving the world.
+
+### ⏳ **Countdown Timers**
+- Create timers for up to **23h 59m 59s**.
+- Up to **3 active countdowns** simultaneously.
+- When a timer reaches `0`, it will **play a sound and send a chat message**.
+- Timers **will not persist** after exiting the game.
+
+More features and improvements will be added based on community feedback!
 
 ---
 
