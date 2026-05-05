@@ -2,17 +2,17 @@ package net.mrvozka.realtimeclock.event;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.mrvozka.realtimeclock.RealTimeClockMod;
 
-@Mod.EventBusSubscriber(modid = RealTimeClockMod.MODID)
+@EventBusSubscriber(modid = RealTimeClockMod.MODID)
 public class ModEvents {
 
     @SubscribeEvent
     public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
-        // Make sure that the code is executed on the server side (client server)
+        // Make sure that the code is executed on the server side
         if (!event.getLevel().isClientSide()) {
             if (event.getEntity() instanceof ServerPlayer player) {
                 try {

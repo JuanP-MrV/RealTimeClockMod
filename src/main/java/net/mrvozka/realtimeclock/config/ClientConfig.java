@@ -1,24 +1,24 @@
 package net.mrvozka.realtimeclock.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class ClientConfig {
-    public static final ForgeConfigSpec CLIENT_SPEC;
+    public static final ModConfigSpec CLIENT_SPEC;
     public static final Client CLIENT;
 
     static {
-        ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
         CLIENT = new Client(builder);
         CLIENT_SPEC = builder.build();
     }
 
     public static class Client {
         // Absolute X position for the clock (in pixels)
-        public final ForgeConfigSpec.IntValue clockX;
+        public final ModConfigSpec.IntValue clockX;
         // Absolute Y position for the clock (in pixels)
-        public final ForgeConfigSpec.IntValue clockY;
+        public final ModConfigSpec.IntValue clockY;
 
-        public Client(ForgeConfigSpec.Builder builder) {
+        public Client(ModConfigSpec.Builder builder) {
             builder.push("general");
             clockX = builder
                     .comment("Absolute X position for the clock (in pixels)")
