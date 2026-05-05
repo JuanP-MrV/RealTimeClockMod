@@ -1,13 +1,14 @@
 package net.mrvozka.realtimeclock.client;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.mrvozka.realtimeclock.config.ClientConfig;
+import org.lwjgl.glfw.GLFW;
+
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import org.lwjgl.glfw.GLFW;
 
 public class ClockPreviewScreen extends Screen {
 
@@ -17,7 +18,7 @@ public class ClockPreviewScreen extends Screen {
 
     public ClockPreviewScreen() {
         super(Component.literal("Preview mode for Real Time Clock"));
-        // Inicializa la posición con los valores actuales de la configuración
+        // Initialize position from current configuration values
         this.previewX = ClientConfig.CLIENT.clockX.get();
         this.previewY = ClientConfig.CLIENT.clockY.get();
     }
@@ -47,7 +48,7 @@ public class ClockPreviewScreen extends Screen {
             previewX += moveAmount;
             return true;
         }
-        // Pressing P or Entern confirms the position.
+        // Pressing P or Enter confirms the position.
         if (keyCode == GLFW.GLFW_KEY_P || keyCode == GLFW.GLFW_KEY_ENTER) {
             ClientConfig.CLIENT.clockX.set(previewX);
             ClientConfig.CLIENT.clockY.set(previewY);
@@ -67,14 +68,14 @@ public class ClockPreviewScreen extends Screen {
     }
 
     @Override
-    public void render(PoseStack poseStack, int mouseX, int mouseY, float partialTick) {
-        // Renders a semi-transparent background to block all other inputs
-        this.renderBackground(poseStack);
+    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        // Renders a semi-transparent background
+        renderBackground(guiGraphics, mouseX, mouseY, partialTick);
         // Displays instructions centered at the top of the screen
-        drawCenteredString(poseStack, this.font, "Preview mode: Use arrows or AWSD to move, P or Enter to confirm, Esc to cancel.", this.width / 2, 20, 0xFFFFFF);
-        // Renders the clock in preview mode (in red)
+        guiGraphics.drawCenteredString(this.font, "Preview mode: Use arrows or AWSD to move, P or Enter to confirm, Esc to cancel.", this.width / 2, 20, 0xFFFFFF);
+        // Renders the clock in preview mode (in red), with shadow
         String timeString = LocalTime.now().format(TIME_FORMATTER);
-        this.font.drawShadow(poseStack, timeString, previewX, previewY, 0xFF0000);
-        super.render(poseStack, mouseX, mouseY, partialTick);
+        guiGraphics.drawString(this.font, timeString, previewX, previewY, 0xFF0000, true);
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
     }
 }

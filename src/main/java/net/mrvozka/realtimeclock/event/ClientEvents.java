@@ -1,23 +1,18 @@
 package net.mrvozka.realtimeclock.event;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.mrvozka.realtimeclock.RealTimeClockMod;
 import net.mrvozka.realtimeclock.client.RealTimeOverlay;
-import org.jetbrains.annotations.NotNull;
 
+@EventBusSubscriber(modid = RealTimeClockMod.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class ClientEvents {
 
-    @Mod.EventBusSubscriber(modid = RealTimeClockMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class ClientModBusEvents {
-
-        @SubscribeEvent
-        public static void registerGuiOverlays(@NotNull RegisterGuiOverlaysEvent event) {
-            // Register the time overlay above the chat.
-            // The first parameter is the ID of our overlay (“time”), the second is the ID of the reference overlay (“chat”).
-            event.registerAboveAll("time", RealTimeOverlay.HUD_TIME);
-        }
+    @SubscribeEvent
+    public static void registerGuiLayers(RegisterGuiLayersEvent event) {
+        // Register the time overlay above all other layers.
+        event.registerAboveAll(RealTimeOverlay.ID, RealTimeOverlay.HUD_TIME);
     }
 }
