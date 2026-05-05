@@ -1,66 +1,60 @@
-## ⏳ Real Time Clock Mod (Minecraft 1.19.2 - Forge)
+## ⏳ Real Time Clock Mod (Minecraft 1.21.1 - NeoForge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
 Developed by **JuanP - MrV** | [GitHub Repository](https://github.com/JuanP-MrV/RealTimeClockMod)
 
 ### 📌 Overview
-**Real Time Clock Mod** is a lightweight and functional Minecraft mod that displays the real-world system time on your screen while playing. It’s perfect for players who want to keep track of time without leaving the game.
+**Real Time Clock Mod** is a lightweight, high-performance mod for **NeoForge 1.21.1**. It seamlessly renders your real-world system time as a customizable HUD overlay, allowing you to stay focused on your adventure while keeping track of time.
 
 ### 🕰️ Features
-- 📟 **Displays the real-time clock** above the chat in Minecraft.
-- 🎨 **Customizable position** via an intuitive preview mode.
-- 🖥️ **Preview mode:** Adjust the clock’s location using an on-screen UI.
-- 🎮 **Simple controls:** Press `P` to enter preview mode, then use `AWSD` or arrow keys to move the clock.
-- 🏆 **Non-intrusive design** that blends well with the game’s UI.
-- ✅ **Optimized for stability** and compatibility with other mods.
+- 📟 **Real-Time Synchronization:** Displays your system clock (HH:mm) directly in-game.
+- 🎨 **Fully Customizable:** Position the clock anywhere on your screen.
+- 🖥️ **Intuitive Preview Mode:** Use an interactive UI to drag and drop your clock.
+- 🎮 **Universal Controls:** Reposition using `AWSD` or arrow keys.
+- 🚀 **Modern Architecture:** Completely rewritten for NeoForge using `GuiGraphics` and `LayeredDraw` for maximum compatibility.
 
 ---
 
 ## 🔧 Installation
 ### Requirements:
-- **Minecraft 1.19.2**
-- **Forge Mod Loader (Forge 43.4.16 or later)**
+- **Minecraft:** `1.21.1`
+- **Mod Loader:** [NeoForge](https://neoforged.net/) (Latest version recommended)
+- **Java:** `21`
 
 ### Steps:
-1. **Download** the latest `.jar` file from [Releases](https://github.com/JuanP-MrV/RealTimeClockMod/releases).
-2. **Place the file** in your Minecraft `mods/` folder.
-3. **Launch Minecraft** with Forge.
-4. **Enjoy!** Your system clock will now be visible in-game.
+1. **Download** the NeoForge version of the mod from [Releases](https://github.com/JuanP-MrV/RealTimeClockMod/releases).
+2. **Place the .jar file** in your Minecraft `mods/` folder.
+3. **Launch Minecraft** using the NeoForge profile.
 
 ---
 
 ## 🎮 Usage Guide
-- **Press `P`** to enter the **preview mode**.
-- Use **`AWSD` or arrow keys** to reposition the clock.
-- Press **`P` again** to **save the position**.
-- Press **`Esc`** to **cancel** and exit preview mode without saving.
+| Action | Key / Control |
+| :--- | :--- |
+| **Enter Preview Mode** | Press `P` |
+| **Move Clock** | `AWSD` or `Arrow Keys` (5px increments) |
+| **Save & Exit** | Press `P` or `Enter` |
+| **Cancel Changes** | Press `Esc` |
 
-The clock will remain in the set position until manually changed.
+*The position is automatically saved to the configuration file.*
 
 ---
 
 ## ⚙️ Configuration
-The mod automatically generates a configuration file in the `config/` folder, allowing you to manually adjust settings if needed.
+The mod uses the **NeoForge Config System** (`ModConfigSpec`). You can find the settings in:
+`.minecraft/config/realtimeclockmod-client.toml`
 
 ---
 
-## 🛠️ Compatibility & Issues
-Real Time Clock Mod is designed to work with most UI and HUD mods. If you encounter any issues, please:
-1. Check for **mod conflicts**.
-2. Ensure you are using **the latest version** of Forge and the mod.
-3. Report issues at: [GitHub Issues](https://github.com/JuanP-MrV/RealTimeClockMod/issues).
+## 🛠️ Technical Details (For Developers)
+- **Engine:** Migrated to NeoForge 1.21.1.
+- **Language:** Java 21.
+- **Rendering:** Migrated from `IGuiOverlay` to `LayeredDraw.Layer`.
+- **Graphics:** Uses `GuiGraphics` for modern buffer management.
 
 ---
 
 ## 📜 License
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
----
-
-## 📢 Contact & Contributions
-If you have suggestions, feature requests, or want to contribute, feel free to:
-- Open an issue: [GitHub Issues](https://github.com/JuanP-MrV/RealTimeClockMod/issues)
-- Fork & contribute: [GitHub Repo](https://github.com/JuanP-MrV/RealTimeClockMod)
-
-🔹 **Developed by:** _JuanP - MrV_  
-🔹 **GitHub Repository:** [RealTimeClockMod](https://github.com/JuanP-MrV/RealTimeClockMod)  
-🔹 **Version:** `1.0.0`
+🔹 **Developer:** _JuanP - MrV_  
+🔹 **Version:** `1.1.0` (NeoForge 1.21.1)
